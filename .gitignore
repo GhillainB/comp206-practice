@@ -1,0 +1,11 @@
+# Compiled C output
+*.o
+*.out
+*.exe
+/build/
+
+# Operating-system and editor temporary files
+.DS_Store
+*.swp
+*.swo
+*~

@@ -12,11 +12,19 @@
 #-echo"i" will print i and not the value of i as in "$i"
 
 #Next:
-#->Check tomorrow how to if (i%2) remainder is not 0 divisibility by 2
-#->Check why there's a problem of syntax when using "-ne" not equal
-#-->Lots of problems with () or [] brackets
+#->Check tomorrow how to if (i%2) remainder is not 0 divisibility by 2 ✅✅
+#->Check why there's a problem of syntax when using "-ne" not equal ✅✅
+#-->Lots of problems with () or [] brackets ✅✅
 
-for ((i=1; i<100; i+=2)); do
-    echo "$i"
+#!/bin/bash
+for ((i=1; i<100; i++)); do
+    if [ $((i % 2)) -ne 0 ]; then
+        echo "$i"
+    fi
 done
 
+#Learned after completion:
+#--> Initialization of variable; num=$1    *NO SPACE*
+#--> Operations are done in DOUBLE brackets; difference=$((num2 - num1))
+#--> If condition requires SPACE BEFORE, BETWEEN, and AFTER variables: if [ $num -gt 10 ]
+#--> Other than initialization, SPACE before and after variable/sign IS IMPERATIVE

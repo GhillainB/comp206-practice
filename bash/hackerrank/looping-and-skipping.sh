@@ -28,3 +28,6 @@ done
 #--> Operations are done in DOUBLE brackets; difference=$((num2 - num1))
 #--> If condition requires SPACE BEFORE, BETWEEN, and AFTER variables: if [ $num -gt 10 ]
 #--> Other than initialization, SPACE before and after variable/sign IS IMPERATIVE
+
+
+#--> Hey look at what an if condition can do with various conditions like -100<x,y<100

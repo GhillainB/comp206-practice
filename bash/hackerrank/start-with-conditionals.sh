@@ -6,3 +6,5 @@ if [ $x = "y" ] || [ $x = "Y" ]; then
 elif [ $x = "n" ] || [ $x = "N" ]; then
     echo "NO"
 fi
+
+# --> Have to review when if has double [[ ]] and when we use one []

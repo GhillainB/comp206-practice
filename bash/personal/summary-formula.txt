@@ -17,4 +17,7 @@ Conditionals:
 	echo...
    done
 
+3. while ...; do
+   done
 
+4. switch

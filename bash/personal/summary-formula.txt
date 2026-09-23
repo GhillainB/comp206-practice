@@ -1,0 +1,20 @@
+
+Arithmetics:
+sum=$((x+y))
+or 
+if [ $((i % 2)) -ne 0 ]
+
+Conditionals:
+1. if [ $x -ge $y ]; then
+	echo....
+   elif [...]; then
+	echo...
+   else; then
+	echo...
+   fi
+
+2. for ((i=1; i<100; i++)); do
+	echo...
+   done
+
+

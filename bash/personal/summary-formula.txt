@@ -20,4 +20,17 @@ Conditionals:
 3. while ...; do
    done
 
-4. switch
+4. switch or case
+	case $1 in 
+		Pattern1)
+		echo"..."
+		;;
+		
+		Pattern2)
+		echo"..."
+		;;
+		
+		*)           --> else/default
+		echo
+		;;
+	esac      	--> inverse of case

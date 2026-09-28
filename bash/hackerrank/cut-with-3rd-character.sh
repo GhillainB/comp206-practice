@@ -1,8 +1,10 @@
 #!/bin/bash
 cut -c3 $1
 
-# cut -f is only for words/fields as in f3-5
+# cut -f is only for words/fields as in f3
 # -c is for character as in c3
+# -c 2-5 --> edit characters from 2 to 5
+# -c 1,3,5 --> extract 1st 3rd and 5th characters
 # -c -4 --> edit from starting, count 4 positions
 # -c 4- --> edit from the end
 # -d "delimiter should be one char"

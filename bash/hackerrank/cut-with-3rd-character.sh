@@ -3,6 +3,8 @@ cut -c3 $1
 
 # cut -f is only for words/fields as in f3-5
 # -c is for character as in c3
+# -c -4 --> edit from starting, count 4 positions
+# -c 4- --> edit from the end
 # -d "delimiter should be one char"
 
 # Modifiers for READ

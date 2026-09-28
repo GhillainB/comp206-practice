@@ -12,3 +12,10 @@ cut -c3 $1
 # -N 3 --> Read only 3 characters, ignore others
 # -r --> respects backlash
 # IFS= read --> respects spaces, so no splitting "Hello World" into two lines
+
+#####
+# while read -r; do
+#   echo "Processing: $REPLY"
+# done < input.txt
+######
+## --> $REPLY reads in echo what line you just read

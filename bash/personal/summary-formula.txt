@@ -38,3 +38,11 @@ Conditionals:
 		echo
 		;;
 	esac      	--> inverse of case
+
+5. printf "%.3f\n" $(echo "$sum / $n" | bc -l)
+	--> This is how to escape Bash truncation and produce decimals
+	--> Use bc -l as you calculate and early mention printf
+
+
+
+

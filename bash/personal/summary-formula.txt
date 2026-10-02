@@ -43,6 +43,12 @@ Conditionals:
 	--> This is how to escape Bash truncation and produce decimals
 	--> Use bc -l as you calculate and early mention printf
 
+6. Calling read for the first time calls first line
+--> subsequent calls resume where you left from
+--> in "read n" read got to stdin and gives stdin to n
+
+
+
 
 
 

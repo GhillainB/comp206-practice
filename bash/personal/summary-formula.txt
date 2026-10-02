@@ -39,16 +39,55 @@ Conditionals:
 		;;
 	esac      	--> inverse of case
 
+6. ‼️ A CONDITION CAN RUN ON TRUE or RETURN 0 or EXIT 0
+	Basically a non-condition/ normal statement code
+	e.g while read; do
+		done
+
 5. printf "%.3f\n" $(echo "$sum / $n" | bc -l)
 	--> This is how to escape Bash truncation and produce decimals
 	--> Use bc -l as you calculate and early mention printf
 
-6. Calling read for the first time calls first line
+6. READ USAGE
+a) Calling read for the first time calls first line
 --> subsequent calls resume where you left from
 --> in "read n" read got to stdin and gives stdin to n
 
+b) while read -r date time level message
+--> 2026-09-20 14:02:11 INFO Server started
+--> var1 = 2026-09-20
+--> var2 = 14:02:11
+--> var3 = INFO
+--> var4 = the rest of the message
+
+c) modifiers:
+--> -p "Giving a prompt"
+# -n 3 --> Make read stop after 3 characters
+# -N 3 --> Read only 3 characters, ignore others
+# -r --> respects backlash
+# IFS= read --> respects spaces, so no splitting "Hello World" into two lines
+--> $REPLY : it prints what is in "read" at the moment
+
+8. PATTERN RECOGNITION 
+a) cut
+--> -d ' '
+--> -f 1,2 | 1-2 | -2 | 2-
+--> -c 1,2 | 1-2 | -2 | 2-
+
+b) grep
+--> -x : exact ⚠️, can block everything for perfection
+
+c) awk
+
+d) sort
+
+e) uniq
+
+f) wc
 
 
+9. Commands commands
+a) echo "$(date +%F)" --> 2026-09-20
 
 
 

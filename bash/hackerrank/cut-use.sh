@@ -1,13 +1,14 @@
 #!/bin/bash
-
+#cut 2nd and 7th
 cut -c 2,7
-#!/bin/bash
 
+#cut from 2nd to 7th character
 cut -c 2-7
-#!/bin/bash
 
+#cut up to 4
 cut -c -4
-#!/bin/bash
+
+#cut with 3rd character
 cut -c3 $1
 
 # cut -f is only for words/fields as in f3

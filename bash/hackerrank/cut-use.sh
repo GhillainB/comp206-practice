@@ -11,6 +11,10 @@ cut -c -4
 #cut with 3rd character
 cut -c3 $1
 
+#For each line in the input, print the fields from second fields to last field.
+cut -d '' -f 2-
+
+
 # cut -f is only for words/fields as in f3
 # -c is for character as in c3
 # -c 2-5 --> edit characters from 2 to 5

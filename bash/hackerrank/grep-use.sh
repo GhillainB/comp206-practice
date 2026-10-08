@@ -6,4 +6,8 @@
 #The search should not be sensitive to case. Display only those lines of 
 #an input file, which contain the required words.
 
-grep -i "the"||"that"||"then"||"those"
+grep -iwE "the|that|then|those"
+-i: Case-insensitive matching.
+-w: Matches complete words only. (ensuring words like "other" or "thence" aren't incorrectly matched):
+-E: Enables extended regex so you can separate pattern options with
+

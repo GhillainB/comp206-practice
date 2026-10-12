@@ -51,6 +51,7 @@ x=$((x + 1))
 ((x += 5))
 ```
 
+
 ### Compare numbers
 ```bash
 -eq     # equal
@@ -267,6 +268,7 @@ esac
 ```
 
 [⬆️ Back to contents](#contents)
+
 
 <a id="section-7"></a>
 

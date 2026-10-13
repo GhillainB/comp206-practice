@@ -11,4 +11,5 @@ elif [ $x -eq $y ]; then
 fi
 
 # Will try a SWITCH condition
-# Was keen to if structure
+#case $x
+#esac

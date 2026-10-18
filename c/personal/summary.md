@@ -63,5 +63,11 @@ Day1:
     printf("%zu\n", sizeof(myChar)); --> 1
      
  11.  Type conversion
+
+  - int myInt = 9.99;
+  - printf("%d", myInt); // 9
+     
+ 12.  Conditionals
+ 13.  
  
 

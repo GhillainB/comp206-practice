@@ -68,6 +68,20 @@ Day1:
   - printf("%d", myInt); // 9
      
  12.  Conditionals
+
+a) If Else
+
+int x = 20;
+int y = 18;
+
+bool isGreater = x > y;
+
+if (isGreater) {
+  printf("x is greater than y");
+}
+
+b)
+  
  13.  
  
 

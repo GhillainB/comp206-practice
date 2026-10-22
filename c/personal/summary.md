@@ -69,14 +69,14 @@ Day1:
      
  12.  Conditionals
 
-a) If Else
+   a) If Else
 
-int x = 20;
-int y = 18;
+  int x = 20;
+  int y = 18;
 
-bool isGreater = x > y;
+  bool isGreater = x > y;
 
-if (isGreater) {
+  if (isGreater) {
   printf("x is greater than y");
 }
 

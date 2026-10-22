@@ -63,14 +63,15 @@ Day1:
     printf("%zu\n", sizeof(myChar)); --> 1
      
  11.  Type conversion
-
-  - int myInt = 9.99;
-  - printf("%d", myInt); // 9
+```c
+ int myInt = 9.99;
+ printf("%d", myInt); // 9
+```
      
  12.  Conditionals
 
    a) If Else
-
+```c
   int x = 20;
   int y = 18;
 
@@ -79,9 +80,10 @@ Day1:
   if (isGreater) {
   printf("x is greater than y");
 }
+```
 
 b) Switch 
-
+```c
 int day = 4;
 
 switch (day) {
@@ -94,39 +96,40 @@ switch (day) {
   default:
     printf("Looking forward to the Weekend");
 }
-
+```
 b) while 
-
+```c
 int i = 0;
 
 while (i < 5) {
   printf("%d\n", i);
   i++;
 }
-
+```
 c) while do
-
+```c
 int i = 10;
 
 do {
   printf("i is %d\n", i);
   i++;
 } while (i < 5);
-
+```
 ⚠️ Be careful
 The statement is false but do-while will still run once
 --> i is 10
 
 d) for loop 
 a countdown
-
+```c
 int i;
 
 for (i = 5; i > 0; i--) {
   printf("%d\n", i);
 }
-
+```
 e) nested loop
+```c
 int i, j;
 
 // Outer loop
@@ -138,29 +141,32 @@ for (i = 1; i <= 2; ++i) {
     printf(" Inner: %d\n", j);  // Executes 6 times (2 * 3)
   }
 }
-
+```
 f) Boolean
-
+```c
 bool isProgrammingFun = true;
 bool isFishTasty = false;
 
 // Print boolean values
 printf("%d\n", isProgrammingFun); // Prints 1 (true)
 printf("%d", isFishTasty);        // Prints 0 (false)
-
+```
+```c
 other boolean,
 printf("%d\n", 10 == 10); // Prints 1 (true), because 10 is equal to 10
 printf("%d\n", 10 == 15); // Prints 0 (false), because 10 is not equal to 15
-
+```
+```c
 bool isGreater = x > y;
 printf("%d", isGreater); // Prints 1 (true)
-
+```
+```c
 bool isHamburgerTasty = true;
 bool isPizzaTasty = true;
 
 // Check if both have the same value (both true, or both false)
 printf("%d", isHamburgerTasty == isPizzaTasty); //Prints 1
-
+```
   
  13.  Arrays
  14.  Strings

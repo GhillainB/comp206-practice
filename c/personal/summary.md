@@ -94,6 +94,51 @@ switch (day) {
   default:
     printf("Looking forward to the Weekend");
 }
+
+b) while 
+
+int i = 0;
+
+while (i < 5) {
+  printf("%d\n", i);
+  i++;
+}
+
+c) while do
+
+int i = 10;
+
+do {
+  printf("i is %d\n", i);
+  i++;
+} while (i < 5);
+
+⚠️ Be careful
+The statement is false but do-while will still run once
+--> i is 10
+
+d) for loop 
+a countdown
+
+int i;
+
+for (i = 5; i > 0; i--) {
+  printf("%d\n", i);
+}
+
+e) nested loop
+int i, j;
+
+// Outer loop
+for (i = 1; i <= 2; ++i) {
+  printf("Outer: %d\n", i);  // Executes 2 times
+
+  // Inner loop
+  for (j = 1; j <= 3; ++j) {
+    printf(" Inner: %d\n", j);  // Executes 6 times (2 * 3)
+  }
+}
+
   
  13.  
  

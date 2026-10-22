@@ -139,7 +139,30 @@ for (i = 1; i <= 2; ++i) {
   }
 }
 
+f) Boolean
+
+bool isProgrammingFun = true;
+bool isFishTasty = false;
+
+// Print boolean values
+printf("%d\n", isProgrammingFun); // Prints 1 (true)
+printf("%d", isFishTasty);        // Prints 0 (false)
+
+other boolean,
+printf("%d\n", 10 == 10); // Prints 1 (true), because 10 is equal to 10
+printf("%d\n", 10 == 15); // Prints 0 (false), because 10 is not equal to 15
+
+bool isGreater = x > y;
+printf("%d", isGreater); // Prints 1 (true)
+
+bool isHamburgerTasty = true;
+bool isPizzaTasty = true;
+
+// Check if both have the same value (both true, or both false)
+printf("%d", isHamburgerTasty == isPizzaTasty); //Prints 1
+
   
- 13.  
+ 13.  Arrays
+ 14.  Strings
  
 

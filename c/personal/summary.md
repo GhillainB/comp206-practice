@@ -14,12 +14,13 @@ Day1:
     commented */
     
  7.  Format specifiers:
-    
-    - %f --> float
-    - %d --> int
-    - %c --> char
-    - %s --> string
-    - %lf --> double
+
+    "%.3f"
+    %f --> float
+    %d --> int
+    %c --> char
+    %s --> string
+    %lf --> double
 
     -short int small = -100;                     // smaller int             --> %hd
     - unsigned int count = 25;                    // only positive int      --> %ud
@@ -30,28 +31,31 @@ Day1:
      
  8.  Uses of char
 
-    - char a = 67, z = 122;
+```c
+    char a = 67, z = 122;
     printf("%c", a);
     printf("%c", z);
     A = 65
     Z = 90
     0 = 48
     9 = 57
-    
-    - char myText = 'Hello';
+```
+```c
+    char myText = 'Hello';
     printf("%c", myText); --> only prints '0'
     so char myText [] = "Hello" ✅
     
-    - char m = 'A'; --> single quote for one character
+    char m = 'A'; --> single quote for one character
     char m = "Hello" --> double quote for a string
-    
+```
  9.  Uses of float
-     
+```c 
     float myFloatNum = 3.5;
     printf("%.2f\n", myFloatNum); // show 2 digits --> 3.50
+```
     
  10.  Uses of sizeof() : space/bytes in memory
-
+```c
     int myInt;
     float myFloat;
     double myDouble;
@@ -61,7 +65,7 @@ Day1:
     printf("%zu\n", sizeof(myFloat)); --> 4
     printf("%zu\n", sizeof(myDouble)); --> 8
     printf("%zu\n", sizeof(myChar)); --> 1
-     
+```
  11.  Type conversion
 ```c
  int myInt = 9.99;

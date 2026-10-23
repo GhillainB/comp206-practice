@@ -22,12 +22,12 @@ Day1:
     %s --> string
     %lf --> double
 
-    -short int small = -100;                     // smaller int             --> %hd
-    - unsigned int count = 25;                    // only positive int      --> %ud
-    - long int big = 1234567890;                  // larger int             --> %ld
-    - long long int veryBig = 9223372036854775807; // very large int        --> %lld
-    - unsigned long long int huge = 18446744073709551615U; // very large, positive --> %llu
-    - long double precise = 3.141592653589793238L; // extended precision    --> %Lf
+    short int small = -100;                     // smaller int             --> %hd
+    unsigned int count = 25;                    // only positive int      --> %ud
+    long int big = 1234567890;                  // larger int             --> %ld
+    long long int veryBig = 9223372036854775807; // very large int        --> %lld
+    unsigned long long int huge = 18446744073709551615U; // very large, positive --> %llu
+    long double precise = 3.141592653589793238L; // extended precision    --> %Lf
      
  8.  Uses of char
 

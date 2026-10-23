@@ -14,7 +14,7 @@ Day1:
     commented */
     
  7.  Format specifiers:
-
+```c
     "%.3f"
     %f --> float
     %d --> int
@@ -28,7 +28,7 @@ Day1:
     long long int veryBig = 9223372036854775807; // very large int        --> %lld
     unsigned long long int huge = 18446744073709551615U; // very large, positive --> %llu
     long double precise = 3.141592653589793238L; // extended precision    --> %Lf
-     
+```
  8.  Uses of char
 
 ```c

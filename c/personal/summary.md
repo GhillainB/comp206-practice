@@ -65,6 +65,10 @@ Day1:
     printf("%zu\n", sizeof(myFloat)); --> 4
     printf("%zu\n", sizeof(myDouble)); --> 8
     printf("%zu\n", sizeof(myChar)); --> 1
+
+int arr[]={10,20,30,40,50}
+printf("%zu\n", sizeof(arr)); --> int(4bytes) x arrindex(5) = 20
+
 ```
  11.  Type conversion
 ```c
@@ -173,6 +177,32 @@ printf("%d", isHamburgerTasty == isPizzaTasty); //Prints 1
 ```
   
  13.  Arrays
- 14.  Strings
+```c
+Modification
+
+int myNumbers[] = {25, 50, 75, 100};
+myNumbers[0] = 33;
+
+printf("%d", myNumbers[0]);   // Now outputs 33 instead of 25
+```
+```c
+Length
+
+int myNumbers[] = {10, 25, 50, 75, 100};
+int length = sizeof(myNumbers) / sizeof(myNumbers[0]);
+
+printf("%d", length);  // Prints 5
+```
+```c
+Multidimensional
+
+int matrix[2][3] = { {1, 4, 2}, {3, 6, 8} };
+printf("%d", matrix[0][0]);
+
+2D arrays (like int scores[3][4]) are great for storing things like scores, game boards, or spreadsheets
+3D arrays (like int cube[2][3][4]) can represent more complex structures like a set of tables or levels in a game
+```
+ 
+ 15.  Strings
  
 

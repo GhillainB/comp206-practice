@@ -67,7 +67,7 @@ Day1:
     printf("%zu\n", sizeof(myChar)); --> 1
 
 int arr[]={10,20,30,40,50}
-printf("%zu\n", sizeof(arr)); --> int(4bytes) x arrindex(5) = 20
+printf("%zu\n", sizeof(arr)); --> int(4 bytes) x arrindex(5) = 20
 
 ```
  11.  Type conversion
@@ -203,6 +203,168 @@ printf("%d", matrix[0][0]);
 3D arrays (like int cube[2][3][4]) can represent more complex structures like a set of tables or levels in a game
 ```
  
- 15.  Strings
+ 14.  Strings
+```c
+Modify
+
+char greetings[] = "Hello World!";
+greetings[0] = 'J';
+printf("%s", greetings);
+
+// Outputs Jello World! instead of Hello World!
+```
+```c
+Null Character
+
+char greetings[] = "Hello";
+printf("%zu", sizeof(greetings));  // 6 = H	e	l	l	o	\0
+
+--> The Null character (created by C when you use double quotes " " ) helps C know where the string ends
+```
+```c
+Looping
+<string.h>
+
+char carName[] = "Volvo";
+int length = strlen(carName); // strlen (thanks to string.h) ≠ sizeof counts \0
+int i;
+
+for (i = 0; i < length; ++i) {
+  printf("%c\n", carName[i]);
+}
+```
+```c
+few additions
+
+char txt[] = "We are the so-called \"Vikings\" from the north.";  \\ use one backlash to escape a special character
+char txt[] = "It\'s alright.";
+```
+```c
+string functions
+
+1. Concatenate
+char str1[20] = "Hello ";
+char str2[] = "World!";
+
+// Concatenate str2 to str1 (result is stored in str1)
+strcat(str1, str2);
+
+// Print str1
+printf("%s", str1);  // Hello World!
+
+2. String length
+char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+printf("%zu\n", strlen(alphabet));   // 26
+printf("%zu\n", sizeof(alphabet));   // 27
+
+char alphabet[50] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+printf("%zu\n", strlen(alphabet));   // 26
+printf("%zu\n", sizeof(alphabet));   // 50
+
+3. Copy
+char str1[20] = "Hello World!";
+char str2[20];
+
+// Copy str1 to str2
+strcpy(str2, str1);
+
+printf("%s", str2); // Hello World!
+
+4. Compare
+char str1[] = "Hello";
+char str2[] = "Hello";
+char str3[] = "Hi";
+
+// Compare str1 and str2, and print the result
+printf("%d\n", strcmp(str1, str2));  // Returns 0 (the strings are equal)
+
+// Compare str1 and str3, and print the result
+printf("%d\n", strcmp(str1, str3));  // Returns -4 (the strings are not equal) --> the exact number differs with complilers
+```
+
+15. Character Char functions
+```c
+#include <ctype.h>
+
+Character functions
+
+Function      Returns True
+isalpha()	--> a letter	'a', 'Z'
+isdigit()	--> a digit	'0', '7'
+isalnum()	--> a letter or a digit	'a', '7'
+isupper()	--> an uppercase letter	'A', 'Z'
+islower()	--> a lowercase letter	'a', 'z'
+isspace()	--> white space, like a space, a tab or a new line	' ', '\n'
+
+Change character
+printf("%c\n", toupper('a'));  // A
+printf("%c\n", tolower('B'));  // b
+printf("%c\n", toupper('7'));  // 7 --> not a letter, remains unchanged
+```
+```c
+Password case
+
+char password[] = "Secret42";
+int hasUpper = 0;
+int hasDigit = 0;
+int i;
+
+for (i = 0; i < strlen(password); i++) {
+  if (isupper(password[i])) {
+    hasUpper = 1;
+  }
+  if (isdigit(password[i])) {
+    hasDigit = 1;
+  }
+}
+
+if (hasUpper && hasDigit) {
+  printf("The password is OK\n");
+} else {
+  printf("The password needs an uppercase letter and a digit\n");
+}
+```
+
+ 16.  String Array
+```c
+char str[5] = "code";     ---->     {'c', 'o', 'd', 'e', '\0'}; // Becomes a valid string = " " adds the null character
+char normal_array[4] = {'c', 'o', 'd', 'e'}; // Just a character array, NOT a safe string = printf wont know where to stop, lacking \0
+```
+```c
+Looping
+
+char fruits[3][10] = {"Apple", "Banana", "Cherry"};
+int count = sizeof(fruits) / sizeof(fruits[0]);   // strlen only helps a single string
+int i;
+
+printf("Number of strings: %d\n", count);   // Number of strings: 3 --> 30/10
+
+for (i = 0; i < count; i++) {
+  printf("%s\n", fruits[i]);
+}
+//Apple
+//Banana
+//Cherry
+```
+```c
+Change a string
+
+char fruits[3][10] = {"Apple", "Banana", "Cherry"};
+
+strcpy(fruits[0], "Mango");       --> fruits[0] = "Mango";  // Error
+printf("%s\n", fruits[0]);   // Mango
+```
+```c
+⚠️This doesn't work:
+    char message[];
+    message[] = "Hello";
+
+Arrays cannot be reassigned by =
+
+    char message[20]; //specify the size
+    strcpy(message, "Hello");
+```
+ 
+ 17.  User input scanf vs fgets
  
 

@@ -16,11 +16,11 @@ Day1:
     
 ### 6. Includes
 ```c
-#include <stdio.h>
+#include <stdio.h> // I/O input output operations: printf, scanf, fgets
 #include <string.h> // strlen, strcpy, strcmp
 #include <stdlib.h> // malloc
 #include <ctype.h> // isupper, isalnum, tolower
-#include <stdbool.h> // bool istrue= true;
+#include <stdbool.h> // bool istrue = true;
 ```
  
     

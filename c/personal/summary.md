@@ -340,7 +340,7 @@ char normal_array[4] = {'c', 'o', 'd', 'e'}; // Just a character array, NOT a sa
 ### Looping
 ```c
 char fruits[3][10] = {"Apple", "Banana", "Cherry"};
-int count = sizeof(fruits) / sizeof(fruits[0]);   // strlen only helps a single string
+int count = sizeof(fruits) / sizeof(fruits[0]);   // strlen only helps a single string since it's stopped by null
 int i;
 
 printf("Number of strings: %d\n", count);   // Number of strings: 3 --> 30/10

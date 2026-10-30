@@ -366,5 +366,49 @@ Arrays cannot be reassigned by =
 ```
  
  17.  User input scanf vs fgets
+```c
+int myNum;
+char myChar;
+
+// Ask the user to type a number AND a character
+printf("Type a number AND a character and press enter: \n");
+
+// Get and save the number AND character the user types
+scanf("%d %c", &myNum, &myChar);
+
+printf("Your number is: %d\n", myNum);
+printf("Your character is: %c\n", myChar);
+```
+```c
+⚠️ --> Array name = address
+char firstName[30];
+
+// Ask the user to input some text
+printf("Enter your first name: \n");
+
+// Get and save the text
+scanf("%s", firstName);
+
+printf("Hello %s", firstName);
+```
+```c
+char fullName[30];
+
+printf("Type your full name: \n");
+scanf("%s", fullName);
+printf("Hello %s", fullName);
+
+// Type your full name: John Doe
+// Hello John
+
+💡
+printf("Type your full name: \n");
+fgets(fullName, sizeof(fullName), stdin);
+printf("Hello %s", fullName);
+
+// Type your full name: John Doe
+// Hello John Doe
+```
  
+ 19.  
 

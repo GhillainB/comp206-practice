@@ -14,7 +14,7 @@ Day1:
      /* The code here is
     commented */
     
-### 6. Includes
+## 6. Includes
 ```c
 #include <stdio.h> // I/O input output operations: printf, scanf, fgets
 #include <string.h> // strlen, strcpy, strcmp
@@ -24,7 +24,7 @@ Day1:
 ```
  
     
- ### 7.  Format specifiers:
+ ## 7.  Format specifiers:
 ```c
     "%.3f"
     %f --> float
@@ -40,7 +40,7 @@ Day1:
     unsigned long long int huge = 18446744073709551615U; // very large, positive --> %llu
     long double precise = 3.141592653589793238L; // extended precision    --> %Lf
 ```
- ### 8.  Uses of char
+ ## 8.  Uses of char
 
 ```c
     char a = 67, z = 122;
@@ -59,13 +59,13 @@ Day1:
     char m = 'A'; --> single quote for one character
     char m = "Hello" --> double quote for a string
 ```
- ### 9.  Uses of float
+ ## 9.  Uses of float
 ```c 
     float myFloatNum = 3.5;
     printf("%.2f\n", myFloatNum); // show 2 digits --> 3.50
 ```
     
- ### 10.  Uses of sizeof() : space/bytes in memory
+ ## 10.  Uses of sizeof() : space/bytes in memory
 ```c
     int myInt;
     float myFloat;
@@ -81,15 +81,15 @@ int arr[]={10,20,30,40,50}
 printf("%zu\n", sizeof(arr)); --> int(4 bytes) x arrindex(5) = 20
 
 ```
- ### 11.  Type conversion
+ ## 11.  Type conversion
 ```c
  int myInt = 9.99;
  printf("%d", myInt); // 9
 ```
      
- ### 12.  Conditionals
+ ## 12.  Conditionals
 
-   a) If Else
+   ### a) If Else
 ```c
   int x = 20;
   int y = 18;
@@ -101,7 +101,7 @@ printf("%zu\n", sizeof(arr)); --> int(4 bytes) x arrindex(5) = 20
 }
 ```
 
-b) Switch 
+### b) Switch 
 ```c
 int day = 4;
 
@@ -116,7 +116,7 @@ switch (day) {
     printf("Looking forward to the Weekend");
 }
 ```
-c) while 
+### c) while 
 ```c
 int i = 0;
 
@@ -125,7 +125,7 @@ while (i < 5) {
   i++;
 }
 ```
-c) while do
+### c) while do
 ```c
 int i = 10;
 
@@ -134,11 +134,11 @@ do {
   i++;
 } while (i < 5);
 ```
-⚠️ Be careful
+### ⚠️ Be careful
 The statement is false but do-while will still run once
 --> i is 10
 
-d) for loop 
+### d) for loop 
 a countdown
 ```c
 int i;
@@ -147,7 +147,7 @@ for (i = 5; i > 0; i--) {
   printf("%d\n", i);
 }
 ```
-e) nested loop
+### e) nested loop
 ```c
 int i, j;
 
@@ -161,7 +161,7 @@ for (i = 1; i <= 2; ++i) {
   }
 }
 ```
-f) Boolean
+### f) Boolean
 ```c
 #include <stdbool.h>
 
@@ -189,7 +189,7 @@ bool isPizzaTasty = true;
 printf("%d", isHamburgerTasty == isPizzaTasty); //Prints 1
 ```
   
- ### 13.  Arrays
+ ## 13.  Arrays
 
 ### Modification
 ```c
@@ -216,7 +216,7 @@ printf("%d", matrix[0][0]);
 3D arrays (like int cube[2][3][4]) can represent more complex structures like a set of tables or levels in a game
 ```
  
- ### 14.  Strings
+ ## 14.  Strings
 
 ### Modify
 ```c
@@ -254,7 +254,7 @@ char txt[] = "We are the so-called \"Vikings\" from the north.";  // use one bac
 char txt[] = "It\'s alright.";
 ```
 
-### String functions
+## String functions
 
 ### 1. Concatenate
 ```c
@@ -300,7 +300,7 @@ printf("%d\n", strcmp(str1, str2));  // Returns 0 (the strings are equal)
 printf("%d\n", strcmp(str1, str3));  // Returns -4 (the strings are not equal) --> the exact number differs with complilers
 ```
 
-### 15. Character Char functions
+## 15. Character Char functions
 ```c
 #include <ctype.h>
 ```
@@ -343,7 +343,7 @@ if (hasUpper && hasDigit) {
 }
 ```
 
- ### 16.  String Array
+ ## 16.  String Array
 ```c
 char str[5] = "code";     ---->     {'c', 'o', 'd', 'e', '\0'}; // Becomes a valid string = " " adds the null character
 char normal_array[4] = {'c', 'o', 'd', 'e'}; // Just a character array, NOT a safe string = printf wont know where to stop, lacking \0
@@ -381,7 +381,7 @@ Arrays cannot be reassigned by =
     strcpy(message, "Hello");
 ```
  
- ### 17.  User input scanf vs fgets
+ ## 17.  User input scanf vs fgets
 ```c
 int myNum;
 char myChar;
@@ -425,6 +425,19 @@ printf("Hello %s", fullName);
 // Type your full name: John Doe
 // Hello John Doe
 ```
+### Formula
+```c
+scanf("format_specifier", &variableName);
+fgets(&variableName, sizeof(variableName), stdin); // fgets(&variableName, size, stdin);
+
+/* For primitive variables (int, char, float, double):
+Always use & (e.g., &myNum, &myChar) because they don't automatically decay into addresses.
+
+For character arrays / strings (char fullName[30]):
+Never use &. The array name is the address! */
+```
+### ⛔️ fgets reads file through file pointers
+### to be continued...
  
  ### 18.  
 

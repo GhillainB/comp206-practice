@@ -239,7 +239,7 @@ for (i = 0; i < length; ++i) {
 
 ### Few additions
 ```c
-char txt[] = "We are the so-called \"Vikings\" from the north.";  \\ use one backlash to escape a special character
+char txt[] = "We are the so-called \"Vikings\" from the north.";  // use one backlash to escape a special character
 char txt[] = "It\'s alright.";
 ```
 

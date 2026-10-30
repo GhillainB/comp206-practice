@@ -152,6 +152,8 @@ for (i = 1; i <= 2; ++i) {
 ```
 f) Boolean
 ```c
+#include <stdbool.h>
+
 bool isProgrammingFun = true;
 bool isFishTasty = false;
 

@@ -13,7 +13,7 @@ Day1:
  6. /* The code here is
     commented */
     
- 7.  Format specifiers:
+ ### 7.  Format specifiers:
 ```c
     "%.3f"
     %f --> float
@@ -29,7 +29,7 @@ Day1:
     unsigned long long int huge = 18446744073709551615U; // very large, positive --> %llu
     long double precise = 3.141592653589793238L; // extended precision    --> %Lf
 ```
- 8.  Uses of char
+ ### 8.  Uses of char
 
 ```c
     char a = 67, z = 122;
@@ -48,13 +48,13 @@ Day1:
     char m = 'A'; --> single quote for one character
     char m = "Hello" --> double quote for a string
 ```
- 9.  Uses of float
+ ### 9.  Uses of float
 ```c 
     float myFloatNum = 3.5;
     printf("%.2f\n", myFloatNum); // show 2 digits --> 3.50
 ```
     
- 10.  Uses of sizeof() : space/bytes in memory
+ ### 10.  Uses of sizeof() : space/bytes in memory
 ```c
     int myInt;
     float myFloat;
@@ -70,13 +70,13 @@ int arr[]={10,20,30,40,50}
 printf("%zu\n", sizeof(arr)); --> int(4 bytes) x arrindex(5) = 20
 
 ```
- 11.  Type conversion
+ ### 11.  Type conversion
 ```c
  int myInt = 9.99;
  printf("%d", myInt); // 9
 ```
      
- 12.  Conditionals
+ ### 12.  Conditionals
 
    a) If Else
 ```c
@@ -105,7 +105,7 @@ switch (day) {
     printf("Looking forward to the Weekend");
 }
 ```
-b) while 
+c) while 
 ```c
 int i = 0;
 
@@ -176,26 +176,26 @@ bool isPizzaTasty = true;
 printf("%d", isHamburgerTasty == isPizzaTasty); //Prints 1
 ```
   
- 13.  Arrays
-```c
-Modification
+ ### 13.  Arrays
 
+### Modification
+```c
 int myNumbers[] = {25, 50, 75, 100};
 myNumbers[0] = 33;
 
 printf("%d", myNumbers[0]);   // Now outputs 33 instead of 25
 ```
-```c
-Length
 
+### Length
+```c
 int myNumbers[] = {10, 25, 50, 75, 100};
 int length = sizeof(myNumbers) / sizeof(myNumbers[0]);
 
 printf("%d", length);  // Prints 5
 ```
-```c
-Multidimensional
 
+### Multidimensional
+```c
 int matrix[2][3] = { {1, 4, 2}, {3, 6, 8} };
 printf("%d", matrix[0][0]);
 
@@ -203,27 +203,28 @@ printf("%d", matrix[0][0]);
 3D arrays (like int cube[2][3][4]) can represent more complex structures like a set of tables or levels in a game
 ```
  
- 14.  Strings
-```c
-Modify
+ ### 14.  Strings
 
+### Modify
+```c
 char greetings[] = "Hello World!";
 greetings[0] = 'J';
 printf("%s", greetings);
 
 // Outputs Jello World! instead of Hello World!
 ```
-```c
-Null Character
 
+### Null Character
+```c
 char greetings[] = "Hello";
-printf("%zu", sizeof(greetings));  // 6 = H	e	l	l	o	\0
+printf("%zu", sizeof(greetings));  // 6 = H-e-l-l-o-\0
 
 --> The Null character (created by C when you use double quotes " " ) helps C know where the string ends
 ```
+
+### Looping
 ```c
-Looping
-<string.h>
+#include <string.h>
 
 char carName[] = "Volvo";
 int length = strlen(carName); // strlen (thanks to string.h) ≠ sizeof counts \0
@@ -233,16 +234,17 @@ for (i = 0; i < length; ++i) {
   printf("%c\n", carName[i]);
 }
 ```
-```c
-few additions
 
+### Few additions
+```c
 char txt[] = "We are the so-called \"Vikings\" from the north.";  \\ use one backlash to escape a special character
 char txt[] = "It\'s alright.";
 ```
-```c
-string functions
 
-1. Concatenate
+### String functions
+
+### 1. Concatenate
+```c
 char str1[20] = "Hello ";
 char str2[] = "World!";
 
@@ -251,8 +253,9 @@ strcat(str1, str2);
 
 // Print str1
 printf("%s", str1);  // Hello World!
-
-2. String length
+```
+### 2. String length
+```c
 char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 printf("%zu\n", strlen(alphabet));   // 26
 printf("%zu\n", sizeof(alphabet));   // 27
@@ -260,8 +263,9 @@ printf("%zu\n", sizeof(alphabet));   // 27
 char alphabet[50] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 printf("%zu\n", strlen(alphabet));   // 26
 printf("%zu\n", sizeof(alphabet));   // 50
-
-3. Copy
+```
+### 3. Copy
+```c
 char str1[20] = "Hello World!";
 char str2[20];
 
@@ -269,8 +273,9 @@ char str2[20];
 strcpy(str2, str1);
 
 printf("%s", str2); // Hello World!
-
-4. Compare
+```
+### 4. Compare
+```c
 char str1[] = "Hello";
 char str2[] = "Hello";
 char str3[] = "Hi";
@@ -282,12 +287,12 @@ printf("%d\n", strcmp(str1, str2));  // Returns 0 (the strings are equal)
 printf("%d\n", strcmp(str1, str3));  // Returns -4 (the strings are not equal) --> the exact number differs with complilers
 ```
 
-15. Character Char functions
+### 15. Character Char functions
 ```c
 #include <ctype.h>
-
-Character functions
-
+```
+### Character functions
+```c
 Function      Returns True
 isalpha()	--> a letter	'a', 'Z'
 isdigit()	--> a digit	'0', '7'
@@ -295,15 +300,15 @@ isalnum()	--> a letter or a digit	'a', '7'
 isupper()	--> an uppercase letter	'A', 'Z'
 islower()	--> a lowercase letter	'a', 'z'
 isspace()	--> white space, like a space, a tab or a new line	' ', '\n'
-
-Change character
+```
+### Change character
+```c
 printf("%c\n", toupper('a'));  // A
 printf("%c\n", tolower('B'));  // b
 printf("%c\n", toupper('7'));  // 7 --> not a letter, remains unchanged
 ```
+### Password case
 ```c
-Password case
-
 char password[] = "Secret42";
 int hasUpper = 0;
 int hasDigit = 0;
@@ -325,14 +330,13 @@ if (hasUpper && hasDigit) {
 }
 ```
 
- 16.  String Array
+ ### 16.  String Array
 ```c
 char str[5] = "code";     ---->     {'c', 'o', 'd', 'e', '\0'}; // Becomes a valid string = " " adds the null character
 char normal_array[4] = {'c', 'o', 'd', 'e'}; // Just a character array, NOT a safe string = printf wont know where to stop, lacking \0
 ```
+### Looping
 ```c
-Looping
-
 char fruits[3][10] = {"Apple", "Banana", "Cherry"};
 int count = sizeof(fruits) / sizeof(fruits[0]);   // strlen only helps a single string
 int i;
@@ -346,9 +350,8 @@ for (i = 0; i < count; i++) {
 //Banana
 //Cherry
 ```
+### Change a string
 ```c
-Change a string
-
 char fruits[3][10] = {"Apple", "Banana", "Cherry"};
 
 strcpy(fruits[0], "Mango");       --> fruits[0] = "Mango";  // Error
@@ -365,7 +368,7 @@ Arrays cannot be reassigned by =
     strcpy(message, "Hello");
 ```
  
- 17.  User input scanf vs fgets
+ ### 17.  User input scanf vs fgets
 ```c
 int myNum;
 char myChar;
@@ -410,5 +413,5 @@ printf("Hello %s", fullName);
 // Hello John Doe
 ```
  
- 19.  
+ ### 18.  
 

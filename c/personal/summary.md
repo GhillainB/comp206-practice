@@ -10,8 +10,19 @@ Day1:
  3. \"	Inserts a double quote character.\"
     
  5. // This is a comment
- 6. /* The code here is
+
+     /* The code here is
     commented */
+    
+### 6. Includes
+```c
+#include <stdio.h>
+#include <string.h> // strlen, strcpy, strcmp
+#include <stdlib.h> // malloc
+#include <ctype.h> // isupper, isalnum, tolower
+#include <stdbool.h> // bool istrue= true;
+```
+ 
     
  ### 7.  Format specifiers:
 ```c

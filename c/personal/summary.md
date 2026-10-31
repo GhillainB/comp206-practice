@@ -564,7 +564,7 @@ int main() {
 // Outputs 8 (5 + 3)
 ```
 ### ⚠️ Why we need pointers 
-### Functions receiving arguments as values cannot change be used to change values
+### Functions receiving arguments as values cannot be used to change values
 ### They only create copies, the original fails to change
 ```c
 void addTen(int x) {

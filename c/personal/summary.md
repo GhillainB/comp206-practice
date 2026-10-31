@@ -521,7 +521,7 @@ int *end = &myNumbers[4];   // points to 50
 int distance = end - start;
 printf("%d\n", distance); // 3 elements apart
 ```
-### Pointer to Pointer // Passing  passing pointers to functions or working with complex data structures
+### Pointer to Pointer: Passing pointers to functions / working with complex data structures
 ```c
 int myNum = 10;       // normal variable
 int *ptr = &myNum;    // pointer to int

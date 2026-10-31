@@ -32,6 +32,10 @@ Day1:
     %c --> char
     %s --> string
     %lf --> double
+    %p --> address // printf("%p", &myAge); // Outputs 0x7ffe5367e044
+                   // int* ptr = &myAge;
+                   // printf("%p\n", ptr); // Outputs 0x7ffe5367e044
+                   // pointers store address
 
     short int small = -100;                     // smaller int             --> %hd
     unsigned int count = 25;                    // only positive int      --> %ud
@@ -439,5 +443,99 @@ Never use &. The array name is the address! */
 ### ⛔️ fgets reads file through file pointers
 ### to be continued...
  
- ### 18.  
+ ## 18.  Pointers
+```c
+int myAge = 43;
+int* ptr = &myAge; // "&" To get memory address
+
+printf("%p", &myAge); // Outputs 0x7ffe5367e044
+printf("%p\n", ptr);  // Outputs 0x7ffe5367e044
+printf("%d\n", *ptr); // Outputs 43     --> "*" Dereference
+
+// pointers store address
+```
+### Change Value
+```c
+int myAge = 43;     // Variable declaration
+int* ptr = &myAge;  // Pointer declaration
+
+// Change the value of myAge with the pointer
+*ptr = 50;
+
+// Output the new value of myAge (50)
+printf("%d\n", myAge);
+```
+```c
+int myNumbers[4] = {25, 50, 75, 100};
+// Change the value of the first element to 13
+*myNumbers = 13;
+
+// Change the value of the second element to 17
+*(myNumbers + 1) = 17;
+```
+### ⚠️
+```c
+int *a, b;🚫
+int *a, *b; ✅
+```
+### Pointers and Arrays
+```c
+int myNumbers[4] = {25, 50, 75, 100};
+
+// it's like int *myNumbers = &myNumbers[0]
+
+printf("%p\n", myNumbers);  // Get the memory address of the myNumbers array
+printf("%p\n", &myNumbers[0]); // Get the memory address of the first array element
+
+printf("%d", *myNumbers); // Get the value of the first element in myNumbers
+
+Results:
+0x7ffe70f9d8f0
+0x7ffe70f9d8f0
+25
+
+myNumbers[1] 🟰 *(myNumbers + 1)
+
+```
+### Looping in array
+```c
+int myNumbers[4] = {25, 50, 75, 100};
+int *ptr = myNumbers;
+int i;
+
+for (i = 0; i < 4; i++) {
+  printf("%d\n", *(ptr + i));
+}
+```
+### Or
+```c
+printf("%d\n", *(myNumbers + 1)); // Second element
+printf("%d", *(myNumbers + 2)); // Third element in myNumbers
+```
+### Case study: Distance
+```c
+int myNumbers[5] = {10, 20, 30, 40, 50};
+int *start = &myNumbers[1]; // points to 20
+int *end = &myNumbers[4];   // points to 50
+
+int distance = end - start;
+printf("%d\n", distance); // 3 elements apart
+```
+### Pointer to Pointer // Passing  passing pointers to functions or working with complex data structures
+```c
+int myNum = 10;       // normal variable
+int *ptr = &myNum;    // pointer to int
+int **pptr = &ptr;    // pointer to pointer
+
+printf("myNum = %d\n", myNum);    // myNum = 10
+printf("*ptr = %d\n", *ptr);      // *ptr = 10
+printf("**pptr = %d\n", **pptr);  // **pptr = 10
+
+💡
+**pptr = 20; // changes myNum
+printf("myNum = %d\n", myNum); // prints 20
+```
+
+ ### 19. Functions
+ 
 

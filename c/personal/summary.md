@@ -609,7 +609,7 @@ int main() {
 ```
 ### 💡 This is how scanf("%d%, &myNum) manages to edit value of something by taking memory address
 
-
+## 20. C Scope in Functions
 
 
 

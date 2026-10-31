@@ -536,6 +536,82 @@ printf("**pptr = %d\n", **pptr);  // **pptr = 10
 printf("myNum = %d\n", myNum); // prints 20
 ```
 
- ### 19. Functions
- 
+ ## 19. Functions
+ ### When returnType is void
+```c
+void myFunction(char name[], int age) {
+  printf("Hello %s. You are %d years old.\n", name, age);
+}
+
+int main() {
+  myFunction("Liam", 3);
+  return 0;
+}
+
+// Hello Liam. You are 3 years old.
+```
+### Other returnTypes
+```c
+int myFunction(int x) {
+  return 5 + x;
+}
+
+int main() {
+  printf("Result is: %d", myFunction(3));
+  return 0;
+}
+
+// Outputs 8 (5 + 3)
+```
+### ⚠️ Why we need pointers 
+### Functions receiving arguments as values cannot change be used to change values
+### They only create copies, the original fails to change
+```c
+void addTen(int x) {
+  x = x + 10;
+}
+
+int main() {
+  int myNum = 5;
+  addTen(myNum);
+  printf("%d\n", myNum); // 5
+  return 0;
+}
+```
+### Getting the sum requires a return but you cant print myNum and get something else
+```c
+#include <stdio.h>
+
+int addTen(int x) {
+  return x + 10;
+}
+
+int main() {
+  int myNum = 5;
+  myNum = addTen(myNum);
+  printf("%d\n", myNum);  // 15
+  return 0;
+}
+```
+### Function pass by value vs by reference (argument)
+### The First code but allow original value to be changed by function
+```c
+void addTen(int *x) {
+  *x = *x + 10;
+}
+
+int main() {
+  int myNum = 5;
+  addTen(&myNum);
+  printf("%d\n", myNum); // 15
+  return 0;
+}
+```
+### 💡 This is how scanf("%d%, &myNum) manages to edit value of something by taking memory address
+
+
+
+
+
+
 

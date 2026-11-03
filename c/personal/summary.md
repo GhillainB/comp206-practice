@@ -609,9 +609,99 @@ int main() {
 ```
 ### 💡 This is how scanf("%d%, &myNum) manages to edit value of something by taking memory address
 
-## 20. C Scope in Functions
+## 20. Math Functions
+```c
+#include <math.h>
+
+printf("%f", sqrt(16));  // 4.000000
+
+printf("%f\n", ceil(1.4));   // 2.000000
+printf("%f\n", floor(1.4));  // 1.000000
+
+printf("%f", pow(4, 3));  // 64.000000 --> x power y in (x,y)
+```
+
+## 21. Recursion in C
+```c
+int sum(int k) {
+  if (k > 0) {
+    return k + sum(k - 1);
+  } else {
+    return 0;
+  }
+}
+
+int main() {
+  int result = sum(3);
+  printf("%d", result);
+  return 0;
+}
+
+sum(3) = 3 + sum(2)
+sum(2) = 2 + sum(1)
+sum(1) = 1 + sum(0)
+sum(0) = 0
+
+sum(3) = 3 + sum(2) --> 3 + 3 = 6
+sum(2) = 2 + sum(1) --> 2 + 1 = 3
+sum(1) = 1 + 0 = 1
+sum(0) = 0
+
+```
+## 22. Function pointers: Menu, Calculators, Command Lists
+### Rules:
+```c
+returnType (*pointerName)(parameterType1, parameterType2, ...); // declaring a function pointer
+int (*ptr)(int, int);   // a pointer to a function that takes two int values and returns an int
+
+ptr = add; // Both Assignment work
+ptr = &add;
+
+ptr(5, 3);
+(*ptr)(5, 3); // Both Calling work
 
 
+void greet(void (*func)()) {
+  func();  }
+// function greet takes a pointer function (with no parameter) and calls it, returning void
+// Function (void (*func)()) is called a "Callback function" --> called from elsewhere
 
 
+int main() {
+  void (*operations[3])() = { add, subtract, multiply };   // Function pointer array --> pointing to several functions
+  for (int i = 0; i < 3; i++) {
+    operations[i]();
+  }
+  return 0;
+}
+```
+### A calculator with an array of function pointers
+```c
+#include <stdio.h>
+
+void add(int a, int b) { printf("Result: %d\n", a + b); }
+void subtract(int a, int b) { printf("Result: %d\n", a - b); }
+void multiply(int a, int b) { printf("Result: %d\n", a * b); }
+
+int main() {
+  int choice, x = 10, y = 5;
+
+  void (*operations[3])(int, int) = { add, subtract, multiply };
+
+  printf("x = %d, y = %d\n\n", x, y);
+  printf("Choose an operation:\n");
+  printf("0: Add\n1: Subtract\n2: Multiply\n");
+  scanf("%d", &choice);
+
+  if (choice >= 0 && choice < 3) {
+    operations[choice](x, y);
+  } else {
+    printf("Invalid choice!\n");
+  }
+
+  return 0;
+}
+```
+
+## 23. Files
 

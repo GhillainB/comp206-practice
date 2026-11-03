@@ -716,8 +716,69 @@ int main() {
   return 0;
 }
 ```
+## 23. Structures struct
+```c
+// Create a structure called myStructure
+struct myStructure {
+  int myNum;
+  char myLetter;
+  char myString[30]; // String
+};
 
-## 23. Files
+int main() {
+  // Create a structure variable of myStructure called s1
+  struct myStructure s1;
+
+  // Assign values to members of s1
+  s1.myNum = 13;
+  s1.myLetter = 'B';
+  strcpy(s1.myString, "Some text");   // Instead of s1.myString = "Some text"; ⚠️
+
+  // Print values
+  printf("My number: %d\n", s1.myNum);
+  printf("My letter: %c\n", s1.myLetter);
+  printf("My string: %s", s1.myString);
+
+  return 0;
+}
+```
+### Or simply 💡 ✅
+```c
+int main() {
+  // Create a structure variable and assign values to it
+  struct myStructure s1 = {13, 'B', "Some text"};
+
+  // Print values
+  printf("%d %c %s", s1.myNum, s1.myLetter, s1.myString);
+
+  return 0;
+}
+```
+### A Car Template
+```c
+struct Car {
+  char brand[30];
+  char model[30];
+  int year;
+};
+
+int main() {
+  struct Car car1 = {"BMW", "X5", 1999};
+  struct Car car2 = {"Ford", "Mustang", 1969};
+  struct Car car3 = {"Toyota", "Corolla", 2011};
+
+  printf("%s %s %d\n", car1.brand, car1.model, car1.year);
+  printf("%s %s %d\n", car2.brand, car2.model, car2.year);
+  printf("%s %s %d\n", car3.brand, car3.model, car3.year);
+
+  return 0;
+}
+```
+### struct can be copied to another member and also modified
+
+### A Struct ends with ";" ⚠️⛔️❗️❗️... unlike a function: End struct with "};"
+
+## 24. Files
 
 
 

@@ -660,13 +660,27 @@ ptr = &add;
 ptr(5, 3);
 (*ptr)(5, 3); // Both Calling work
 
-
+```
+```c
 void greet(void (*func)()) {
   func();  }
 // function greet takes a pointer function (with no parameter) and calls it, returning void
 // Function (void (*func)()) is called a "Callback function" --> called from elsewhere
 
+```
+```c
+// Calling back something that has parameters
 
+void calculate(void (*callback)(int, int), int x, int y) {
+  callback(x, y);
+}
+
+int main() {
+  calculate(addNumbers, 5, 3);
+  return 0;
+
+```
+```c
 int main() {
   void (*operations[3])() = { add, subtract, multiply };   // Function pointer array --> pointing to several functions
   for (int i = 0; i < 3; i++) {
@@ -704,4 +718,7 @@ int main() {
 ```
 
 ## 23. Files
+
+
+
 

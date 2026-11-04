@@ -104,7 +104,13 @@ printf("%zu\n", sizeof(arr)); --> int(4 bytes) x arrindex(5) = 20
   printf("x is greater than y");
 }
 ```
+```c
+One-lined if statement
 
+condition ? expression_if_true : expression_if_false;
+int max = (a > b) ? a : b;
+
+```
 ### b) Switch 
 ```c
 int day = 4;

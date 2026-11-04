@@ -158,6 +158,12 @@ fi
 - `[ ... ]`: combine separate tests with `&&` / `||`.
 - `else` has no `then`.
 
+```bash
+One-lined statement
+
+if [ $x -eq 5 ]; then echo "Five"; elif [ $x -eq 6 ]; then echo "Six"; else echo "Other"; fi
+```
+
 ### ‼️ COMMANDS CAN BE CONDITIONS
 
 ```bash

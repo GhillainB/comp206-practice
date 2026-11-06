@@ -1,3 +1,12 @@
+##
+### ⚠️‼️⛔️ 
+- ### In C, 0 means False/Error (or success for strcmp/main),
+- ### and 1 means True/Success.
+##
+- ### In Bash, 0 means Success (Exit Code 0),
+- ### and any non-zero number (1 to 255) means Error.
+##
+
 Day1:
 1. gcc is done after every edit on file.c
 2. Only a.out compiled file is run

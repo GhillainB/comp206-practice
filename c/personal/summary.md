@@ -104,6 +104,15 @@ printf("%zu\n", sizeof(arr)); --> int(4 bytes) x arrindex(5) = 20
 
    ### a) If Else
 ```c
+if (condition1) {
+    // Executes if condition1 is true
+} else if (condition2) {
+    // Executes if condition1 is false and condition2 is true
+} else {
+    // Executes if all previous conditions are false
+}
+```
+```c
   int x = 20;
   int y = 18;
 

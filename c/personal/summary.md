@@ -7,6 +7,20 @@
 - ### and any non-zero number (1 to 255) means Error.
 ##
 
+## 
+```c
+You cannot use the [] array bracket syntax when assigning the result of calloc.
+char sort1[]=(char)calloc(strlen(s1)+1,sizeof(s1[0]));🚫
+
+• char sort1[] tells the compiler to allocate fixed stack space right now.
+• calloc allocates dynamic heap space and gives you back a memory address.
+• To hold a memory address, the variable must be a pointer (char *sort1).
+
+char *sort1 = (char*) calloc(strlen(s1) + 1, sizeof(s1[0])); ✅
+
+```
+##
+
 Day1:
 1. gcc is done after every edit on file.c
 2. Only a.out compiled file is run

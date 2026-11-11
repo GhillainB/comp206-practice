@@ -167,6 +167,13 @@ while (i < 5) {
   i++;
 }
 ```
+```c
+while true
+
+while (1) {
+    // statements to repeat
+}
+```
 ### c) while do
 ```c
 int i = 10;

@@ -477,6 +477,8 @@ Always use & (e.g., &myNum, &myChar) because they don't automatically decay into
 
 For character arrays / strings (char fullName[30]):
 Never use &. The array name is the address! */
+
+⚠️ fgets reads at most size - 1 characters, reserving space for '\0'.
 ```
 ### ⛔️ fgets reads file through file pointers
 ### to be continued...

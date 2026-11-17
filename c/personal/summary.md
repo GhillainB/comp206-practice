@@ -884,11 +884,31 @@ int *ptr2 = calloc(amount, size);
 FILE *fptr;
 
 // Create a file
-fptr = fopen("filename.txt", "w");
+fptr = fopen("filename.txt", "w");  // "C:\\directoryname\\filename.txt", "w"
+
+// Writing
+fprintf(fptr, "Hello World!");
 
 // Close the file
 fclose(fptr);
 ```
+### Appending
+```c
+FILE *fptr;
+
+// Open a file in append mode
+fptr = fopen("filename.txt", "a");
+
+// Append some text to the file
+fprintf(fptr, "\nHi everybody!");
+
+// Close the file
+fclose(fptr);
+
+```
+Hello World
+Hi everybody
+
 ### Reading a file
 
 

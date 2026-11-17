@@ -879,6 +879,17 @@ int *ptr2 = calloc(amount, size);
 ```
 
 ## 25. Files
+### Creating a file (w: new or overwrite)
+```c
+FILE *fptr;
+
+// Create a file
+fptr = fopen("filename.txt", "w");
+
+// Close the file
+fclose(fptr);
+```
+### Reading a file
 
 
 

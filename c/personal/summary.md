@@ -863,7 +863,19 @@ int main() {
   for (j = 0; j < myList.numItems; j++) {
     printf("%d ", myList.data[j]);
 
+// Free the memory when it is no longer needed
+  free(myList.data);
+  myList.data = NULL;
 
+  return 0;
+}
+```
+```c
+myList.data = malloc(myList.size * sizeof(int));
+myList.data = calloc(myList.size, sizeof(int));
+
+int *ptr1 = malloc(calculated total size);
+int *ptr2 = calloc(amount, size);
 ```
 
 ## 25. Files

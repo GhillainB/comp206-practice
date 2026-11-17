@@ -1253,7 +1253,172 @@ if (fptr != NULL) {
   printf("Not able to open the file.");
 }
 ```
+##
+## Additions
+### Linked List
+### Insert in front
+```c
+#include <stdio.h>
+#include <stdlib.h>
 
+struct Node {
+  int data;
+  struct Node *next;
+};
+
+struct Node *createNode(int value) {
+  struct Node *newNode = malloc(sizeof(struct Node));
+  if (newNode == NULL) {
+    printf("Memory allocation failed\n");
+    exit(1);
+  }
+  newNode->data = value;
+  newNode->next = NULL;
+  return newNode;
+}
+
+// Adds a node at the front, and returns the new head
+struct Node *insertAtFront(struct Node *head, int value) {
+  struct Node *newNode = createNode(value);
+  newNode->next = head; // Step 1: point to the current head
+  return newNode;       // Step 2: the new node is the new head
+}
+
+void printList(struct Node *head) {
+  struct Node *current = head;
+  while (current != NULL) {
+    printf("%d -> ", current->data);
+    current = current->next;
+  }
+  printf("NULL\n");
+}
+
+void freeList(struct Node *head) {
+  while (head != NULL) {
+    struct Node *next = head->next;
+    free(head);
+    head = next;
+  }
+}
+
+int main() {
+  struct Node *head = NULL; // An empty list
+
+  head = insertAtFront(head, 30);
+  printList(head);
+
+  head = insertAtFront(head, 20);
+  printList(head);
+
+  head = insertAtFront(head, 10);
+  printList(head);
+
+  freeList(head);
+  return 0;
+}
+Result:
+
+30 -> NULL
+20 -> 30 -> NULL
+10 -> 20 -> 30 -> NULL
+```
+### Delete Node
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+  int data;
+  struct Node *next;
+};
+
+struct Node *createNode(int value) {
+  struct Node *newNode = malloc(sizeof(struct Node));
+  if (newNode == NULL) {
+    printf("Memory allocation failed\n");
+    exit(1);
+  }
+  newNode->data = value;
+  newNode->next = NULL;
+  return newNode;
+}
+
+struct Node *insertAtFront(struct Node *head, int value) {
+  struct Node *newNode = createNode(value);
+  newNode->next = head;
+  return newNode;
+}
+
+// Deletes the first node with this value, and returns the head
+struct Node *deleteValue(struct Node *head, int value) {
+  // The list is empty
+  if (head == NULL) {
+    return NULL;
+  }
+
+  // Special case: delete the first node
+  if (head->data == value) {
+    struct Node *newHead = head->next;
+    free(head);
+    return newHead;
+  }
+
+  // Find the node before the one to delete
+  struct Node *current = head;
+  while (current->next != NULL && current->next->data != value) {
+    current = current->next;
+  }
+
+  // Skip over the node, then free it
+  if (current->next != NULL) {
+    struct Node *toDelete = current->next;
+    current->next = toDelete->next;
+    free(toDelete);
+  }
+
+  return head;
+}
+
+void printList(struct Node *head) {
+  struct Node *current = head;
+  while (current != NULL) {
+    printf("%d -> ", current->data);
+    current = current->next;
+  }
+  printf("NULL\n");
+}
+
+void freeList(struct Node *head) {
+  while (head != NULL) {
+    struct Node *next = head->next;
+    free(head);
+    head = next;
+  }
+}
+
+int main() {
+  struct Node *head = NULL;
+  head = insertAtFront(head, 40);
+  head = insertAtFront(head, 30);
+  head = insertAtFront(head, 20);
+  head = insertAtFront(head, 10);
+  printList(head);
+
+  head = deleteValue(head, 20); // Delete from the middle
+  printList(head);
+
+  head = deleteValue(head, 10); // Delete the first node
+  printList(head);
+
+  freeList(head);
+  return 0;
+}
+Result:
+
+10 -> 20 -> 30 -> 40 -> NULL
+10 -> 30 -> 40 -> NULL
+30 -> 40 -> NULL
+```
 ---
 
 [⬆️ Back to contents](#contents)

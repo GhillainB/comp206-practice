@@ -827,7 +827,24 @@ int main() {
 
 ### A Struct ends with ";" ⚠️⛔️❗️❗️... unlike a function: End struct with "};"
 
-## 24. Files
+## 24. Memory allocation
+```c
+struct list {
+  int *data; // Points to the memory where the list items are stored
+  int numItems; // Indicates how many items are currently in the list
+  int size; // Indicates how many items fit in the allocated memory
+};
+
+void addToList(struct list *myList, int item);
+
+int main() {
+  struct list myList;
+  int amount;
+  int i, j;
+
+```
+
+## 25. Files
 
 
 

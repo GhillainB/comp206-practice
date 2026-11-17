@@ -842,6 +842,17 @@ int main() {
   int amount;
   int i, j;
 
+ // Create a list and start with enough space for 10 items
+  myList.numItems = 0;
+  myList.size = 10;
+  myList.data = malloc(myList.size * sizeof(int));
+
+  // Find out if memory allocation was successful
+  if (myList.data == NULL) {
+    printf("Memory allocation failed");
+    return 1; // Exit the program with an error code
+  }
+
 ```
 
 ## 25. Files

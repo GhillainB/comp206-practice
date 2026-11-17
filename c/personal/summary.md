@@ -976,6 +976,20 @@ if (fptr != NULL) {
   printf("Not able to open the file.");
 }
 ```
+## ADDITIONS
+
+# `fgets()` vs `scanf()` in C — Code Comparison
+
+| Scenario | `fgets()` (Recommended) | `scanf()` | Key Difference |
+| :--- | :--- | :--- | :--- |
+| **Read a Single Word** | `char word[20];`<br>`fgets(word, sizeof(word), stdin);`<br>`word[strcspn(word, "\n")] = '\0';` | `char word[20];`<br>`scanf("%19s", word);` | `fgets()` captures `\n` (must strip it). `scanf()` stops at whitespace and needs `%19s` to avoid overflow. |
+| **Read a Full Line** | `char line[100];`<br>`fgets(line, sizeof(line), stdin);`<br>`line[strcspn(line, "\n")] = '\0';` | `char line[100];`<br>`scanf(" %99[^\n]", line);` | `fgets()` reads spaces natively. `scanf()` requires a leading space and scanset (`%[^\n]`). |
+| **Read an Integer** | `char buf[32], *end;`<br>`if (fgets(buf, sizeof(buf), stdin))`<br>`  long n = strtol(buf, &end, 10);` | `int n;`<br>`if (scanf("%d", &n) != 1)`<br>`  /* invalid input */` | `fgets()` + `strtol()` consumes the whole line. `scanf()` leaves bad characters stuck in `stdin`. |
+| **Mix Numbers & Strings** | `fgets(buf, sizeof(buf), stdin);`<br>`int age = atoi(buf);`<br>`fgets(name, sizeof(name), stdin);` | `scanf("%d", &age);`<br>`getchar(); /* clear \n */`<br>`fgets(name, sizeof(name), stdin);` | `fgets()` consumes `\n` every time. `scanf("%d")` leaves `\n` in the buffer, skipping the next line read. |
+| **Read from a File** | `FILE *fp = fopen("data.txt", "r");`<br>`while (fgets(buf, sizeof(buf), fp))` | `FILE *fp = fopen("data.txt", "r");`<br>`while (fscanf(fp, "%d", &val) == 1)` | `fgets()` takes any `FILE*` stream directly. `scanf()` only reads `stdin` (must use `fscanf()`). |
+| **Error & EOF Check** | `if (fgets(buf, sizeof(buf), stdin) == NULL)` | `int rc = scanf("%d", &n);`<br>`if (rc == EOF \|\| rc != 1)` | `fgets()` returns `NULL` on EOF/error. `scanf()` returns `EOF` or the count of matched items. |
+
+
 
 
 

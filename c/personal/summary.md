@@ -853,6 +853,17 @@ int main() {
     return 1; // Exit the program with an error code
   }
 
+// Add any number of items to the list specified by the amount variable
+  amount = 44;
+  for (i = 0; i < amount; i++) {
+    addToList(&myList, i + 1);
+  }
+
+  // Display the contents of the list
+  for (j = 0; j < myList.numItems; j++) {
+    printf("%d ", myList.data[j]);
+
+
 ```
 
 ## 25. Files

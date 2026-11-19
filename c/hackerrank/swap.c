@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 void swap(int *pa, int *pb) {
-    int temp = *pa;
-    *pa = *pb;
-    *pb = temp;
+    int temp = *pa;  // Save x's value: 5
+    *pa = *pb;       // Write 10 into x
+    *pb = temp;      // Write 5 into y
 }
 
 // In main:

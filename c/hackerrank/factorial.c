@@ -8,3 +8,6 @@ int Fact(int n) {
     }
     return results;
 }
+
+
+// It avoids unnecessary n * (n-1)
